@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width">
+   <title>Pallindrome</title>
+   <script>
+     function pal(n)
+     {
+       let x = n.toString()
+       if(x.length!=5)
+         window.alert("Make sure it's a 5 digit number!")
+       else
+       {
+         const arr = x.split("")
+         arr.reverse()
+         let y = arr.join("")
+         if(x==y)
+           document.writeln("It's a Palindrome number.")
+         else
+         document.writeln("Not a Palindrome number.")
+       }
+     }
+   </script>
+   <link href="style.css" rel="stylesheet" type="text/css" />
+ </head>
+ <body>
+   <h1>Enter a 5 digit number and check whether it's a pallindrome or not:</h1>
+   <input type="number" id="field"/>
+   <button onclick="pal(document.getElementById('field').value)">Check</button>
+ </body>
+</html>

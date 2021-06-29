@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>MaxValues</title>
+	<script>
+		function max(n)
+     {
+       let x = n.toString()
+       const arr = x.split(" ")
+       if(arr.length!=10)
+         document.writeln("Please enter 10 numbers!")
+       else
+       {
+         var i,j,flag=1,k=0;
+         const new_arr=[];
+         for(i=0;i<arr.length;i++)
+         {
+           for(j=i+1;j<arr.length;j++)
+           {
+             if(arr[i]==arr[j])
+             {
+               flag=0;
+               break;
+             }
+           }
+           if(flag==1)
+           {
+             new_arr[k]=arr[i]
+             k++;
+           }
+           else
+             break;
+         }
+         if(flag==1)
+         {
+           for(i=0;i<new_arr.length;i++)
+           {
+             new_arr[i] = Number(new_arr[i])
+           }
+           var m = Math.max.apply(Math,new_arr)
+           document.writeln("The Largest number is : ",Math.max.apply(Math,new_arr))
+           document.write("<br>");
+           new_arr.splice(new_arr.indexOf(m),1)
+           document.writeln("The Second Largest number is : ",Math.max.apply(Math,new_arr))
+          
+         }
+         else
+         {
+           window.alert("Please do not repeat a number that has been entered once!");
+         }
+       }
+}
+	</script>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<h1>Enter 10 unique numbers seperated by spaces, to find the largest 2:</h1>
+	<input type="text" id="field"/>
+   <button onclick="max(document.getElementById('field').value)">Find</button>
+ </body>
+</html>

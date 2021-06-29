@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content=" width=device-width">
+	<title> Registration form </title>
+
+	<body style="background-color:YELLOW;">
+		<marquee direction="left">WELCOME TO GOVERNMENT ENGINEERING COLLEGE BARTON HILL</marquee>
+
+		<body onload="document.myform.name.focus();">
+			<script>
+				function validate()
+{
+var  name= document.myform.name.value;
+var crs= document.myform.crs.value;
+var sem= document.myform.sem.value;
+var branch = document.myform.branch.value;
+var regno=document.myform.regno.value;
+var cno=document.myform.contact.value;
+if( name == "" || crs  == ""|| sem == "" || branch == "" || regno == "" || cno == "")
+     window.alert("fill all cells");
+    else if(!isNaN(name) )
+      window.alert("Please check your name again.");
+    else if(!isNaN(branch) )
+      window.alert("Invalid  branch name.");
+    else if(isNaN(sem))
+      window.alert("Please enter the correct semester.");
+   else if(regno.length!=10 )
+     window.alert("Register number doesn't exist!");
+   else if(cno.length  != 10 || isNaN(cno))
+    window.alert("Contact number does not exist!");
+  else
+   window.alert("All data has been submitted successfully. Choose the book of your choice now :) ");
+ 	
+}
+
+			</script>
+
+			<body>
+				<h1>COLLEGE LIBRARY STUDENT ADMISSION FORM</h1>
+				<p><b> Please use the tab icon to move between fields.</b></p>
+<form name="myform">
+
+<PRE>
+  NAME        : <INPUT TYPE="TEXT" NAME="name"/><br>
+  COURSE        :     <INPUT TYPE="TEXT" NAME="crs"/><br>
+  BRANCH        : <INPUT TYPE="TEXT" NAME="branch"/><br>
+  SEMESTER      : <INPUT TYPE="TEXT" NAME="sem"/><br>
+  REGISTER NUMBER     :     <INPUT TYPE="TEXT" NAME="regno"/><br>
+  CONTACT NUMBER      : <INPUT TYPE="TEXT" NAME="contact"/><br>
+  
+  
+          <INPUT TYPE="SUBMIT" value="SUBMIT" onclick="validate()"/></PRE>
+
+  </form>
+
+ </body>

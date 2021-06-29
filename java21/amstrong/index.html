@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Amstrong</title>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<script>
+		function arm(n)
+     {
+       let x = n.toString()
+       if(x.length!=4)
+         window.alert("NOT A FOUR DIGIT NUMBER!")
+       else
+       {
+         let a = Math.pow(Number(x[0]),4)
+         let b = Math.pow(Number(x[1]),4)
+         let c = Math.pow(Number(x[2]),4)
+         let d = Math.pow(Number(x[3]),4)
+         let s = a+b+c+d
+         if(s==n)
+         {
+           document.writeln("It's an Armstrong Number!")
+         }
+         else
+           document.writeln("Sorry, but not an Armtrong Number!")
+       }
+     }
+	</script>
+</head>
+
+<body>
+	<h1>Check if a 4-digit number is an Armstrong Number or not:</h1>
+	<input type="number" id="field"/>
+   <button onclick="arm(document.getElementById('field').value)">Check</button>
+ </body>
+</html>

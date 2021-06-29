@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+	<title> Encryption of number</title>
+	<script>
+
+	</script>
+	<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+	<script>
+		function encrypt(val)
+   {
+     var i;
+     var s = val.toString()
+     const arr=[];
+     for(i=0;i<s.length;i++)
+       arr[i]=Number(s[i]);
+     const e=[];
+     for(i=0;i<arr.length;i++)
+       e[i]=((arr[i]+7)%10)
+     e[0]=e[2]+e[0];
+     e[2]=e[0]-e[2];
+     e[0]=e[0]-e[2];
+     e[1]=e[1]+e[3];
+     e[3]=e[1]-e[3];
+     e[1]=e[1]-e[3];
+     document.writeln("Encrypted Number : ");
+     for(i=0;i<e.length;i++)
+       document.writeln(e[i]);
+       document.writeln("<br>Decrypted Original Number is : ");
+     for(i=0;i<arr.length;i++)
+       document.writeln(arr[i]);
+   }
+     function inp()
+   {
+     var x = prompt("Please Enter the data as 4 digits:")
+     var flag=1
+     if(x.toString()=="")
+     {
+       flag=0;
+       window.alert("No data entered!")
+     }
+     if(x.toString().length!=4)
+     {
+       flag=0;
+       window.alert("Please Enter a 4 digit Number only.")
+     }
+     if(flag==1)
+       encrypt(x)  
+   }
+	</script>
+	<h1>DATA ENCRYPTION AND DECRYPTION:</h1>
+	<button onclick="inp()">CLICK HERE TO ENCRYPT DATA</button>
+  </body>
+</html>
